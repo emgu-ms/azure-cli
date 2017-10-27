@@ -140,6 +140,7 @@ def _configure_db_create_params(
     # Only applicable to default create mode. Also only applicable to db.
     if create_mode != CreateMode.default or engine != Engine.db:
         cmd.ignore('sample_name')
+        cmd.ignore('zone_redundant')
 
     # Only applicable to point in time restore or deleted restore create mode.
     if create_mode not in [CreateMode.restore, CreateMode.point_in_time_restore]:
